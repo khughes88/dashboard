@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link type="text/css" href="/views/layout.css" rel="stylesheet" />
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="/logtail/logtail.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+var redirectURL = "http://vm-7af5-90e8.nam.nsroot.net";
+
+window.onload = function() { setInterval(countdown, 1000); }
+function countdown() {
+	var num = parseInt(document.getElementById('timer').innerHTML);
+	if(--num < 1) window.location = redirectURL;
+	else document.getElementById('timer').innerHTML = num;
+}
+//]]>
+</script>
+
+
+
+<!--[if lte IE 8]><script type="text/javascript" src="/flot/excanvas.js"></script><![endif]-->
+
+<script type="text/javascript" language="javascript" src="/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.time.min.js"></script>
+<script type="text/javascript" src="/logtail/logtail.js"></script>
+</head>
+<body>
+
+<script>
+	
+	$(document).ready(function () {
+		
+
+			
+			sevseries0 = [
+			{data: [[1, 0],[2, 0],[3, 0],[4, 0]],label: "Open",color: "#99D1F5"},
+			{data: [[1, 0],[2, 0],[3, 0],[4, 0]],
+			label: "Resolved",
+			color: "#008CE6"}];
+
+			sevoptions0 = {
+				grid: {borderWidth: 0,borderColor: "#a4a4a4",color: "#a4a4a4"},
+				yaxis: {
+				font:  {size: 10,weight: "normal",family: "is",color: "#000000"},
+				ticks: [[10, "10"], [20, "20"]],
+				max: 20,
+				min: 0,
+				tickSize: 10					
+				},
+				xaxis: {
+					autoscaleMargin: 0.05,
+					font:  {size: 10,weight: "normal",family: "is",color: "#000000"},
+					ticks: [[1, "S1(0)"], [2, "S2(0)"], [3, "S3(0)"], [4, "S4(0)"]],
+					minTickSize: 1
+				},
+				legend: {show: false},			
+				series: {bars: {
+						lineWidth: 1,
+						fill:0.5,
+						show: true,
+						barWidth: 0.8,
+						align: "center"
+						},
+				stack: true,
+				shadowSize:1
+				}
+			};
+			$.plot("#sev_div0",sevseries0,sevoptions0);
+			
+					
+		
+
+			
+			
+			
+		
+			hi_jiracurve0 = [[1425618000000, 0],[1425704400000, 0],[1425790800000, 0],[1425873600000, 0],[1425960000000, 0],[1426046400000, 0],[1426132800000, 0],[1426219200000, 0],[1426305600000, ],[1426392000000, ],[1426478400000, ],[1426564800000, ],[1426651200000, ],[1426737600000, ],[, ],];
+			low_jiracurve0 = [[1425618000000, 0],[1425704400000, 0],[1425790800000, 0],[1425873600000, 0],[1425960000000, 0],[1426046400000, 0],[1426132800000, 0],[1426219200000, 0],[1426305600000, ],[1426392000000, ],[1426478400000, ],[1426564800000, ],[1426651200000, ],[1426737600000, ],[, ],];
+			jiracurve_guide0 = [[1425618000000, 10],[1425704400000, 10],[1425790800000, 10],[1425873600000, 10],[1425960000000, 10],[1426046400000, 10],[1426132800000, 10],[1426219200000, 10],[1426305600000, 10],[1426392000000, 10],[1426478400000, 10],[1426564800000, 10],[1426651200000, 10],[1426737600000, 10],[, 10],];
+			
+			
+			
+			$.plot($("#curve_div0"),[
+				{data: hi_jiracurve0,lines: {fill:true, points: { show: true } ,show: true, colors:["#FF0000",]}},
+				{data: low_jiracurve0,lines: {fill:true, points: { show: true } ,show: true, colors:["#008CE6",]}},
+				{data: jiracurve_guide0,lines: {fill:false, points: { show: true } ,show: true, colors:["#00843D"]}},
+				],{
+				grid: {borderWidth: 0,borderColor: "#a4a4a4",color: "#a4a4a4"},
+				yaxis: { minTickSize: 1,font:{size: 10,weight: "normal",family: "is",color:"#000000"},min: 0},
+				xaxis: { autoscale:false,mode:"time",timeformat: "%d/%m", font:{size: 10,weight: "normal",family: "is",color:"#000000"}},
+				legend: {show: false},	
+				shadowSize:0,
+				colors:["#FF0000","#008CE6","#808080"]
+			});
+			
+			
+		
+			
+			
+			
+		
+	
+		
+			
+			
+			
+			sevseries1 = [
+			{data: [[1, 0],[2, 0],[3, 3],[4, 4]],label: "Open",color: "#99D1F5"},
+			{data: [[1, 0],[2, 0],[3, 3],[4, 4]],
+			label: "Resolved",
+			color: "#008CE6"}];
+
+			sevoptions1 = {
+				grid: {borderWidth: 0,borderColor: "#a4a4a4",color: "#a4a4a4"},
+				yaxis: {
+				font:  {size: 10,weight: "normal",family: "is",color: "#000000"},
+				ticks: [[10, "10"], [20, "20"]],
+				max: 20,
+				min: 0,
+				tickSize: 10					
+				},
+				xaxis: {
+					autoscaleMargin: 0.05,
+					font:  {size: 10,weight: "normal",family: "is",color: "#000000"},
+					ticks: [[1, "S1(0)"], [2, "S2(0)"], [3, "S3(3)"], [4, "S4(4)"]],
+					minTickSize: 1
+				},
+				legend: {show: false},			
+				series: {bars: {
+						lineWidth: 1,
+						fill:0.5,
+						show: true,
+						barWidth: 0.8,
+						align: "center"
+						},
+				stack: true,
+				shadowSize:1
+				}
+			};
+			$.plot("#sev_div1",sevseries1,sevoptions1);
+			
+					
+		
+
+			
+			
+			
+		
+			hi_jiracurve1 = [[1426046400000, 0],[1426132800000, 0],[1426219200000, 1],[1426305600000,1 ],[1426392000000, ],[1426478400000, ],[1426564800000, ],[1426651200000, ],[1426737600000, ],[1426824000000, ],[1426910400000, ],[1426996800000, ],[1427083200000, ],[1427169600000, ],[, ],];
+			low_jiracurve1 = [[1426046400000, 5],[1426132800000, 6],[1426219200000, 6],[1426305600000, 5],[1426392000000, ],[1426478400000, ],[1426564800000, ],[1426651200000, ],[1426737600000, ],[1426824000000, ],[1426910400000, ],[1426996800000, ],[1427083200000, ],[1427169600000, ],[, ],];
+			jiracurve_guide1 = [[1426046400000, 10],[1426132800000, 10],[1426219200000, 10],[1426305600000, 10],[1426392000000, 10],[1426478400000, 10],[1426564800000, 10],[1426651200000, 10],[1426737600000, 10],[1426824000000, 10],[1426910400000, 10],[1426996800000, 10],[1427083200000, 10],[1427169600000, 10],[, 10],];
+			
+			
+			
+			$.plot($("#curve_div1"),[
+				{data: hi_jiracurve1,lines: {fill:true, points: { show: true } ,show: true, colors:["#FF0000",]}},
+				{data: low_jiracurve1,lines: {fill:true, points: { show: true } ,show: true, colors:["#008CE6",]}},
+				{data: jiracurve_guide1,lines: {fill:false, points: { show: true } ,show: true, colors:["#00843D"]}},
+				],{
+				grid: {borderWidth: 0,borderColor: "#a4a4a4",color: "#a4a4a4"},
+				yaxis: { minTickSize: 1,font:{size: 10,weight: "normal",family: "is",color:"#000000"},min: 0},
+				xaxis: { autoscale:false,mode:"time",timeformat: "%d/%m", font:{size: 10,weight: "normal",family: "is",color:"#000000"}},
+				legend: {show: false},	
+				shadowSize:0,
+				colors:["#FF0000","#008CE6","#808080"]
+			});
+			
+			
+		
+			
+			
+			
+		
+	
+			
+	});
+</script>
+
+<div style="color:white;z-index:100;width:50px;height:21px;position:absolute;top:21px;right:10px;font-size:17px;font-family:arial;">
+ <span id="timer">60</span><a href='/config'>.</a>
+ </div>
+
+<div id="top"><a href='/config'>config</a></div>
+<div id="banner"><div id="il"><a href='/'><img src="/images/CitiLogo.gif"></a></div><p></p></div>
+
+<div id="pagearea" >
+ <div class="container">
+	
+	
+	
+	
+	
+	
+	<table class="table">
+	
+		
+			<tr>	
+				<td align=left style="width:200px;height:20px;padding:0px;"><h3>Agile Authentication</h3></td>
+			
+				<td width=200>
+					<div class="panel panel-default panel-primary" style="width:200px;height:190px;margin:5px;">
+						<div class="panel-heading" style="height:31px;">
+						<a style="color:white;"  href ="https://www.citi.net/confluence/pages/viewpage.action?pageId=202081873">
+						Build
+						</a>
+						</div>
+						<div class="panel-body">
+							
+							<table>
+								<tr><td align=right><a href="http://10.49.236.37:8111/externalStatus.html">build: </a></td><td><img src="./images/ok.png" width=30 height=30></td></tr>
+								<tr><td align=right><a href="http://tcqc1.cdt.cil.nam.nsroot.net:81/externalStatus.html">test:</a></td><td><img src="./images/ok.png" width=30 height=30></td></tr>
+							</table>
+						<br>
+							
+							
+							</div>
+						</div>
+					</div>
+				</td>	
+				
+				
+				<td  width=200>
+					<div class="panel panel-default panel-primary" style="width:220px;height:190px;margin:5px;">
+					<div class="panel-heading"  style="height:31px;">
+					<a style="color:white;" href="https://www.citi.net/jira/secure/IssueNavigator!executeAdvanced.jspa?jqlQuery=project=167448 AND type='1' AND status!='Closed'&runQuery=true&clear=true">Defect Pool</a>
+					<span class="badge pull-right" style="color:#008CE6">0</span>
+					
+					<span class="badge pull-right"  style="color:#FF0000">0</span>
+					</div>
+							
+						<div class="panel-body">
+								
+									
+						
+						
+						<div  style="margin:5px;" class="chart_div" id="sev_div0"></div>
+						
+						</div>
+					</div>
+				</td>
+			
+			
+			
+			
+				<td>
+					<div class="panel panel-defaul panel-primary" style="width:220px;height:190px;margin:5px;">
+						<div class="panel-heading"  style="height:31px;">Sprint 3: 7 day(s) left</div>
+						
+						<div class="panel-body">
+				
+							<div class="chart_div" id="curve_div0" ></div>
+						</div>
+						
+			
+					</div>
+				</td>
+				
+				<td>
+					<div class="panel panel-defaul panel-primary" style="width:220px;height:190px;margin:5px;">
+						<div class="panel-heading"  style="height:31px;">
+					<b>Oldest Defect (days)</b>
+					</div>
+						<div class="panel-body">
+						<table class="table table-striped table-condensed">
+						<tr><td>Sev1</td><td><a style="color:black" href="https://www.citi.net/jira/browse/"></a></td></tr> 
+						<tr><td>Sev2</td><td><a style="color:black" href="https://www.citi.net/jira/browse/"></a></td></tr> 
+						<tr><td>Sev3</td><td><a style="color:black" href="https://www.citi.net/jira/browse/"></a></td></tr> 
+						<tr><td>Sev4</td><td><a style="color:black" href="https://www.citi.net/jira/browse/"></a></td></tr> 
+						</table>	
+						</div>
+						
+			
+					</div>
+				</td>
+			</tr>
+
+	
+		
+			<tr>	
+				<td align=left style="width:200px;height:20px;padding:0px;"><h3>BE Tablet</h3></td>
+			
+				<td width=200>
+					<div class="panel panel-default panel-primary" style="width:200px;height:190px;margin:5px;">
+						<div class="panel-heading" style="height:31px;">
+						<a style="color:white;"  href ="https://www.citi.net/confluence/pages/viewpage.action?pageId=202081873">
+						Build
+						</a>
+						</div>
+						<div class="panel-body">
+							
+							<table>
+								<tr><td align=right><a href="http://tc2.cdt.cil.nam.nsroot.net:81/externalStatus.html">build: </a></td><td><img src="./images/ok.png" width=30 height=30></td></tr>
+								<tr><td align=right><a href="http://tcqc2.cdt.cil.nam.nsroot.net/externalStatus.html">test:</a></td><td><img src="./images/ok.png" width=30 height=30></td></tr>
+							</table>
+						<br>
+							
+							
+							</div>
+						</div>
+					</div>
+				</td>	
+				
+				
+				<td  width=200>
+					<div class="panel panel-default panel-primary" style="width:220px;height:190px;margin:5px;">
+					<div class="panel-heading"  style="height:31px;">
+					<a style="color:white;" href="https://www.citi.net/jira/secure/IssueNavigator!executeAdvanced.jspa?jqlQuery=project=1655040 AND type='1' AND status!='Closed'&runQuery=true&clear=true">Defect Pool</a>
+					<span class="badge pull-right" style="color:#008CE6">0</span>
+					
+					<span class="badge pull-right"  style="color:#FF0000">7</span>
+					</div>
+							
+						<div class="panel-body">
+								
+									
+						
+						
+						<div  style="margin:5px;" class="chart_div" id="sev_div1"></div>
+						
+						</div>
+					</div>
+				</td>
+			
+			
+			
+			
+				<td>
+					<div class="panel panel-defaul panel-primary" style="width:220px;height:190px;margin:5px;">
+						<div class="panel-heading"  style="height:31px;">Sprint 4: 12 day(s) left</div>
+						
+						<div class="panel-body">
+				
+							<div class="chart_div" id="curve_div1" ></div>
+						</div>
+						
+			
+					</div>
+				</td>
+				
+				<td>
+					<div class="panel panel-defaul panel-primary" style="width:220px;height:190px;margin:5px;">
+						<div class="panel-heading"  style="height:31px;">
+					<b>Oldest Defect (days)</b>
+					</div>
+						<div class="panel-body">
+						<table class="table table-striped table-condensed">
+						<tr><td>Sev1</td><td><a style="color:black" href="https://www.citi.net/jira/browse/1655040-643"></a></td></tr> 
+						<tr><td>Sev2</td><td><a style="color:black" href="https://www.citi.net/jira/browse/1655040-282"></a></td></tr> 
+						<tr><td>Sev3</td><td><a style="color:black" href="https://www.citi.net/jira/browse/1655040-327">4</a></td></tr> 
+						<tr><td>Sev4</td><td><a style="color:black" href="https://www.citi.net/jira/browse/1655040-246">3</a></td></tr> 
+						</table>	
+						</div>
+						
+			
+					</div>
+				</td>
+			</tr>
+
+	
+
+		</table>
+ <pre id="data" class="logger">Loading...</pre>
+		
+	</div>
+</div>

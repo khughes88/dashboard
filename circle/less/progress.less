@@ -1,0 +1,31 @@
+// core
+.pie_progress {
+  text-align: center;
+  position: relative;
+
+  svg {
+    margin: 0 auto;
+  }
+
+  transform-style: preserve-3d;
+
+  &__content, &__number, &__label, &__icon {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+// styles 
+.pie_progress {
+  &__number {
+    font-size: 42px;
+  }
+
+  &__label {
+    margin-top: 32px;
+    font-size: 12px;
+  }
+}

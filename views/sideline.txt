@@ -1,0 +1,209 @@
+<td>
+					<div class="panel panel-defaul panel-primary dashpanel">
+						<div class="panel-heading dashpanel-heading">
+					Oldest Defect (days)
+					</div>
+						<div class="panel-body">
+						<table style="margin: 0 auto;margin-top:10px;"><tr>
+					<td style="padding:2px">
+					<%
+					days=el['s1oldest'].to_i
+					if days>30 then
+					pct=100
+					else
+					#percentage of 30 days 
+					pct=((100.to_f/30)*days).to_i
+					end
+					deg=(3.6*pct)
+					%>
+					
+					<%if deg>180  then
+						l=180
+						r=deg-180	
+					else
+						l=deg
+						r=0
+					end%>
+						<div id="progress_meter" >
+						    <ul>
+							<li id="c1_r" ><p style="
+							-moz-transform: rotate(<%=l%>deg); 
+							-webkit-transform: rotate(<%=l%>deg); 
+							-o-transform: rotate(<%=l%>deg);
+							"><span class="pie_left"
+							<%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+							<li id="c1_l">
+							<p style="
+							-moz-transform: rotate(<%=r%>deg); 
+							-webkit-transform: rotate(<%=r%>deg); 
+							-o-transform: rotate(<%=r%>deg);
+							">
+							<span class="pie_right" <%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+						    </ul>
+						    <div id="center-circle">
+							<span><%=days%></span>
+						    </div>
+						</div>
+					</td>
+					<td style="padding:2px">
+					<%
+					days=el['s2oldest'].to_i
+					if days>30 then
+					pct=100
+					else
+					#percentage of 30 days 
+					pct=((100.to_f/30)*days).to_i
+					end
+					deg=(3.6*pct)
+					%>
+					
+					<%if deg>180  then
+						l=180
+						r=deg-180	
+					else
+						l=deg
+						r=0
+					end%>
+						<div id="progress_meter" >
+						    <ul>
+							<li id="c1_r" ><p style="
+							-moz-transform: rotate(<%=l%>deg); 
+							-webkit-transform: rotate(<%=l%>deg); 
+							-o-transform: rotate(<%=l%>deg);
+							"><span class="pie_left"
+							<%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+							<li id="c1_l">
+							<p style="
+							-moz-transform: rotate(<%=r%>deg); 
+							-webkit-transform: rotate(<%=r%>deg); 
+							-o-transform: rotate(<%=r%>deg);
+							">
+							<span class="pie_right" <%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+						    </ul>
+						    <div id="center-circle">
+							<span><%=days%></span>
+						    </div>
+						</div>
+					</td>
+					<td style="padding:2px">
+					<%
+					days=el['s3oldest'].to_i
+					if days>30 then
+					pct=100
+					else
+					#percentage of 30 days 
+					pct=((100.to_f/30)*days).to_i
+					end
+					deg=(3.6*pct)
+					%>
+					
+					<%if deg>180  then
+						l=180
+						r=deg-180	
+					else
+						l=deg
+						r=0
+					end%>
+						<div id="progress_meter" >
+						    <ul>
+							<li id="c1_r" ><p style="
+							-moz-transform: rotate(<%=l%>deg); 
+							-webkit-transform: rotate(<%=l%>deg); 
+							-o-transform: rotate(<%=l%>deg);
+							"><span class="pie_left"
+							<%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+							<li id="c1_l">
+							<p style="
+							-moz-transform: rotate(<%=r%>deg); 
+							-webkit-transform: rotate(<%=r%>deg); 
+							-o-transform: rotate(<%=r%>deg);
+							">
+							<span class="pie_right" <%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+						    </ul>
+						    <div id="center-circle">
+							<span><%=days%></span>
+						    </div>
+						</div>
+					</td>
+					<td style="padding:2px">
+					<%
+					days=el['s4oldest'].to_i
+					if days>30 then
+					pct=100
+					else
+					#percentage of 30 days 
+					pct=((100.to_f/30)*days).to_i
+					end
+					deg=(3.6*pct)
+					%>
+					
+					<%if deg>180  then
+						l=180
+						r=deg-180	
+					else
+						l=deg
+						r=0
+					end%>
+						<div id="progress_meter" >
+						    <ul>
+							<li id="c1_r" ><p style="
+							-moz-transform: rotate(<%=l%>deg); 
+							-webkit-transform: rotate(<%=l%>deg); 
+							-o-transform: rotate(<%=l%>deg);
+							"><span class="pie_left"
+							<%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+							<li id="c1_l">
+							<p style="
+							-moz-transform: rotate(<%=r%>deg); 
+							-webkit-transform: rotate(<%=r%>deg); 
+							-o-transform: rotate(<%=r%>deg);
+							">
+							<span class="pie_right" <%if days>30 then%>
+							style="background: #D23655;"
+							<%end%>
+							></span></p></li>
+						    </ul>
+						    <div id="center-circle">
+							<span><%=days%></span>
+						    </div>
+						</div>
+						
+					</td>
+					</tr>
+					<tr>
+					<td align=middle><a href="https://www.citi.net/jira/browse/<%=el['s1oldest_id']%>"><b>Sev 1</b></a></td>
+					<td align=middle><a href="https://www.citi.net/jira/browse/<%=el['s2oldest_id']%>"><b>Sev 2</b></a></td>
+					<td align=middle><a href="https://www.citi.net/jira/browse/<%=el['s3oldest_id']%>"><b>Sev 3</b></a></td>
+					<td align=middle><a href="https://www.citi.net/jira/browse/<%=el['s4oldest_id']%>"><b>Sev 4</b></a></td>
+					</tr>
+					<tr><td colspan=4>
+					
+					</td></tr>
+					</table>
+						
+						
+						</div>
+					
+					</div>
+				</td>

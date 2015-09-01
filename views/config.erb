@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link type="text/css" href="/views/layout.css" rel="stylesheet" />
+<link href="/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<style>
+@font-face {   
+font-family: "is";   
+src: url("is.ttf") ;   
+format( "truetype", "type-1" ) ;   
+} 
+</style>
+
+
+
+</script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.min.js"></script>
+<script type="text/javascript" src="/flot/excanvas.js"></script>
+
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.time.min.js"></script>
+<script src="/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+
+
+<div id="top"><a href='/'>home</a></div>
+<div id="banner"></div>
+
+
+<div id="pagearea" >
+<div class="container">
+
+
+<form class="form-inline" action="/newproj" method="post">
+  <div class="form-group">
+    <label for="newproj" style="color:white;">New Project:</label>
+    <input type="text" size="60" name="newproj" class="form-control" id="newproj" value="">
+  </div>
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<br><br>
+
+<%@dataset.each{|el|%>
+<div class="jumbotron">
+<form action="/config" method="post">
+ <div class="form-group">
+	<h2><%=el['projname']%></h2>
+	<input type="hidden"  name="projname" id="projname" value="<%=el['projname']%>">
+</div>
+
+ <div class="form-group">
+	<label for="jiraproject">Jira Project id: </label>
+	<input type="text" class="form-control" name="jiraproject" id="jiraproject" value="<%=el['jiraproject']%>" size="50">
+</div>
+ 
+<div class="form-group">
+		<label for="teamcitybuildurl">TeamCity Build url(e.g. http://tc2.cdt.cil.nam.nsroot.net:81/externalStatus.html):  </label>
+		<input type="text" class="form-control" name="teamcitybuildurl" id="teamcitybuildurl" value="<%=el['teamcitybuildurl']%>" size="100">
+	</div>
+	<div class="form-group">
+		<label for="teamcitybuildid">TeamCity Build id(e.g. s10_CDTR1_ScheduledAutomatedBuildDeliveryAndInstallation):  </label>
+		<input type="text" class="form-control" name="teamcitybuildid" id="teamcitybuildid" value="<%=el['teamcitybuildid']%>" size="100">
+	</div>
+	<div class="form-group">
+		<label for="teamcitytesturl">TeamCity Test url(e.g. http://tc2qc2.cdt.cil.nam.nsroot.net:81/externalStatus.html):  </label>
+		<input type="text" class="form-control" name="teamcitytesturl" id="teamcitytesturl" value="<%=el['teamcitytesturl']%>" size="100">
+	</div>
+	<div class="form-group">
+		<label for="teamcitytestid">TeamCity Test id(e.g. s10_CDTR1_Smoketest):  </label>
+		<input type="text" class="form-control" name="teamcitytestid" id="teamcitytestid" value="<%=el['teamcitytestid']%>" size="100">
+	</div>
+	<div class="form-group">
+		<label for="sprint_name">Current Sprint:</label>
+		<input type="text" class="form-control" name="sprint_name" id="sprint_name" value="<%=el['sprint_name']%>" size="50">
+	</div>
+	<div class="form-group">
+		<label for="sprint_start">Sprint Start: </label>
+		<input type="text" class="form-control" name="sprint_start" id="sprint_start" value="<%=el['sprint_start']%>" size="30">
+	</div>
+	<div class="form-group">
+		<label for="sprint_end">Sprint End: </label>
+		<input type="text"class="form-control"  name="sprint_end" id="sprint_end" value="<%=el['sprint_end']%>" size="30">
+	</div>
+	<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+<form action="/delete/<%=el['projname']%>" method="post"><button type="submit" class="btn btn-default btn-warning">Delete</button></form>
+
+</div>
+
+
+
+<%}%>
+</div>
+</div>
+
+
+</body>
+</html>
