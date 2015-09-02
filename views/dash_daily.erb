@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link type="text/css" href="/views/layout.css" rel="stylesheet" />
@@ -49,9 +50,20 @@ orange="#CB6015"
 <body>
 
 <script>
-	
+
 	$(document).ready(function () {
-		
+    <%
+		if !@dataset['hi_jiracurve'] then
+      @dataset['hi_jiracurve']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      @dataset['daily_closed_totals']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      @dataset['daily_created_totals']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      @dataset['low_jiracurve']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+      @dataset['jiracurve_guide']=[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
+     @dataset['project_days']=[1437364800000,1437451200000,1437537600000,1437624000000,1437624000000,1437796800000,1437883200000,1437969600000,1438056000000,1438142400000]
+    end
+    %>
+
+
 			hi_jiracurve = [<%count=-1%><%@dataset['hi_jiracurve'].each {|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
 			low_jiracurve = [<%count=-1%><%@dataset['low_jiracurve'].each{|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
 			jiracurve_guide = [<%count=-1%><%@dataset['jiracurve_guide'].each{|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
@@ -64,17 +76,17 @@ orange="#CB6015"
 				grid: {borderWidth: 0,borderColor: "#E6E6E6",color: "#E6E6E6"},
 				yaxis: { minTickSize: 1,font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"},min: 0},
 				xaxis: { autoscale:false,mode:"time",timeformat: "%d/%m", font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"}},
-				legend: {show: false},	
+				legend: {show: false},
 				shadowSize:0,
 				colors:["<%="#FF0000"%>","<%="#008CE6"%>","#808080"]
 			});
-			
-			
-			
+
+
+
 		 daily_closed=[<%count=-1%><%@dataset['daily_closed_totals'].each {|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
                 daily_created=[<%count=-1%><%@dataset['daily_created_totals'].each {|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
                daily_resolved=[<%count=-1%><%@dataset['daily_closed_totals'].each {|st|%><%count=count+1;%>[<%=@dataset['project_days'][count]%>, <%=st%>],<%}%>];
-			
+
 		$.plot($("#daily_bars"),[
 				{data: daily_closed,bars: {showNumbers: true,barWidth: 1000*60*60*5,align: 'left',show: true}},
 				{data: daily_created,bars: {showNumbers: true,barWidth: 1000*60*60*5,align: 'center',show: true}},
@@ -84,7 +96,7 @@ orange="#CB6015"
 				grid: {borderWidth: 0,borderColor: "#E6E6E6",color: "#E6E6E6"},
 				yaxis: { minTickSize: 1,font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"},min: 0},
 				xaxis: { autoscale:false,mode:"time",timeformat: "%d/%m", font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"}},
-				legend: {show: true},	
+				legend: {show: true},
 				shadowSize:0,
 				colors:["green","red","blue"]
 			});
@@ -100,57 +112,53 @@ orange="#CB6015"
 
 <div id="pagearea" >
  <div class="container">
-	
-	<table class="table">
-	<tr>	
 
-				<td>
+	<div class=row>
+       <div class="col-sm-12 col-md-12 col-lg-4">
 					<h1 style="color:white"><%=@dataset['projname']%></h1>
-				</td>
-				
-				
-			</tr>
-		
-			<tr>	
+				</div>
 
-				<td>
+
+			</div>
+
+			<div class=row>
+       <div class="col-sm-12 col-md-12 col-lg-4">
 					<div class="panel panel-defaul panel-primary dashpanel" style="width:90%;height:300px;">
 						<div class="panel-heading dashpanel-heading"><%=@dataset['sprint_name']%>: <%=@dataset['days_remaining']%> day(s) left - (<span style="color:red">Sev1 + Sev 2</span> /  <span style="color:blue">Sev3 + Sev 4</span>)</div>
-						
+
 						<div class="panel-body">
-				
+
 							<div class="daily_chart_div" id="curve_div" ></div>
 						</div>
-						
-			
+
+
 					</div>
-					
-					
-				</td>
-				
-				
-			</tr>
 
-			<tr>	
 
-				<td>
+				</div>
+
+
+			</div>
+
+		<div class=row>
+       <div class="col-sm-12 col-md-12 col-lg-4">
 					<div class="panel panel-defaul panel-primary dashpanel" style="width:90%;height:300px;">
 						<div class="panel-heading dashpanel-heading"><span style="color:red">created</span> - <span style="color:blue">resolved</span> - <span style="color:green">closed</span></div>
-						
+
 						<div class="panel-body">
-				
+
 							<div class="daily_chart_div" id="daily_bars" ></div>
 						</div>
-						
-			
-					</div>
-				</td>
-				
-				
-			</tr>
 
-		</table>
- 
-		
+
+					</div>
+				</div>
+
+
+			</div>
+
+
+
+
 	</div>
 </div>

@@ -1,4 +1,4 @@
-
+require 'uri'
 require 'mongo'
 include Mongo
 require 'sinatra'
@@ -9,55 +9,65 @@ require './config.rb'
 
 set :public_folder, File.dirname(__FILE__)+"/"
 set :environment, :production
-set :protection, :except => :frame_options 
-set :port, 80
-#~ $logger = Logger.new('sinatra.log','weekly')
-#~ $logger.level = Logger::WARN
-#~ $stdout.reopen("sinatra.log", "w")
-#~ $stdout.sync = true
-#~ $stderr.reopen($stdout)
+set :protection, :except => :frame_options
+set :port, 8080
+set :bind, '0.0.0.0'
+$logger = Logger.new('sinatra.log','weekly')
+$logger.level = Logger::WARN
+ $stdout.reopen("sinatra.log", "w")
+$stdout.sync = true
+$stderr.reopen($stdout)
 
 #Thread.new do # trivial example work thread
 # system("run_schedule.rb")
 #end
 
 def hashme(obj)
-return JSON.parse(obj.to_a.to_json)     
+return JSON.parse(obj.to_a.to_json)
 end
 
-get '/log' do	
+get '/log' do
 erb :log, :layout=>false
 end
 
-get '/' do	
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']
+get '/' do
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
 @dataset=hashme(@sub.find())
+
 erb :dash, :layout=>false
 end
 
 get '/daily/:proj' do	 |proj|
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
 @dataset=hashme(@sub.find("projname"=>proj))[0]
 p "Heyt: #{@dataset['hi_jiracurve']}"
 erb :dash_daily, :layout=>false
 end
 
 get '/config' do
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']	
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
 @dataset=hashme(@sub.find())
 erb :config, :layout=>false
 end
 
 post '/config' do
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']	
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
 
 d=Hash.new
 
@@ -71,25 +81,33 @@ d['teamcitytestid']=params[:teamcitytestid]
 d['sprint_name']=params[:sprint_name]
 d['sprint_start']=params[:sprint_start]
 d['sprint_end']=params[:sprint_end]
-p @sub.update({"projname"=>"#{params[:projname]}"}, {"$set" => d},  { "upsert"=> true })	
-				
-redirect '/config'	
+ # p @sub.update_one({"projname"=>"#{params[:projname]}"}, {"$set" => d},  { "upsert"=> true })
+@sub.find("projname"=>"#{params[:projname]}").update_one("$set" => d)
+
+redirect '/config'
 end
 
 post '/delete/:proj' do |proj|
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']
-@super  = @db['superset']
-@sub.remove({"projname"=>proj})
-@super.remove({"projname"=>proj})
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+  @super=@db[:superset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
+#@super  = @db['superset']
+#@sub.remove({"projname"=>proj})
+#@super.remove({"projname"=>proj})
+@super.find("projname"=>proj).delete_one
+@sub.find("projname"=>proj).delete_one
 redirect '/config'
 end
 
 post '/newproj' do
-@client = MongoClient.new('localhost', 27017)
-@db     = @client['cildata']
-@sub  = @db['subset']
+@db = Mongo::Client.new([ '127.0.0.1:27017' ], :database => 'testdata')
+@sub  = @db[:subset]
+#@client = MongoClient.new('localhost', 27017)
+#@db     = @client['cildata']
+#@sub  = @db['subset']
 data=Hash.new
 data['sev1']
 data["build"] = "none"
@@ -124,11 +142,12 @@ data["sprints"] = []
 data["sprint_name"] = "No Sprint"
 data["sprint_start"] = "1/1/2014"
 data["sprint_end"] = "1/1/2014"
-@sub.insert({"projname"=>params[:newproj]})
-@sub.update({"projname"=>"#{params[:newproj]}"}, {"$set" => data},  { "upsert"=> true })	
-				
-				
-redirect '/config'	
+@sub.insert_one({"projname"=>params[:newproj]})
+  @sub.find("projname"=>"#{params[:newproj]}").update_one("$set" => data)
+ # @sub.update_one({"projname"=>"#{params[:newproj]}"}, {},  { "upsert"=> true })
+
+
+redirect '/config'
 end
 
 

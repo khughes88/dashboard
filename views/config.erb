@@ -1,17 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <link type="text/css" href="/views/layout.css" rel="stylesheet" />
 <link href="/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
 <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <style>
-@font-face {   
-font-family: "is";   
-src: url("is.ttf") ;   
-format( "truetype", "type-1" ) ;   
-} 
+@font-face {
+font-family: "is";
+src: url("is.ttf") ;
+format( "truetype", "type-1" ) ;
+}
 </style>
 
 
@@ -33,7 +34,7 @@ format( "truetype", "type-1" ) ;
 
 
 <div id="top"><a href='/'>home</a></div>
-<div id="banner"></div>
+
 
 
 <div id="pagearea" >
@@ -45,12 +46,14 @@ format( "truetype", "type-1" ) ;
     <label for="newproj" style="color:white;">New Project:</label>
     <input type="text" size="60" name="newproj" class="form-control" id="newproj" value="">
   </div>
-  
+
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 <br><br>
 
 <%@dataset.each{|el|%>
+<div class=row>
+<div class="col-sm-12 col-md-12 col-lg-4">
 <div class="jumbotron">
 <form action="/config" method="post">
  <div class="form-group">
@@ -62,7 +65,7 @@ format( "truetype", "type-1" ) ;
 	<label for="jiraproject">Jira Project id: </label>
 	<input type="text" class="form-control" name="jiraproject" id="jiraproject" value="<%=el['jiraproject']%>" size="50">
 </div>
- 
+
 <div class="form-group">
 		<label for="teamcitybuildurl">TeamCity Build url(e.g. http://tc2.cdt.cil.nam.nsroot.net:81/externalStatus.html):  </label>
 		<input type="text" class="form-control" name="teamcitybuildurl" id="teamcitybuildurl" value="<%=el['teamcitybuildurl']%>" size="100">
@@ -97,7 +100,8 @@ format( "truetype", "type-1" ) ;
 
 </div>
 
-
+</div>
+  </div>
 
 <%}%>
 </div>

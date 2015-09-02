@@ -1,7 +1,7 @@
 body{
 margin:0px;
 padding:0px;
-overflow:hidden;
+
 width:100%;
 height:100%;
 background-color: '#000000'!important;
@@ -44,7 +44,7 @@ font-family:arial;
 }
 
 #banner p{
-font: 20px Verdana, Arial, Helvetica, sans-serif; 
+font: 20px Verdana, Arial, Helvetica, sans-serif;
 color:green;
 font-weight:bold;
 line-height:50px;
@@ -144,7 +144,7 @@ position:absolute; top:0px; left:0px;
 height:70px;
 width:100%;
 z-index:0;
-background-color:#1D1F24; 
+background-color:#1D1F24;
 display:table-cell;
 text-align:center;
 font: normal 12px 'Arial';
@@ -182,7 +182,7 @@ text-decoration:none;
     padding: 0;
      margin: 0;
 }
-    
+
 #progress_meter li {
     position: absolute;
     top: 0px;
@@ -226,7 +226,7 @@ text-decoration:none;
     border-bottom-right-radius: 25px;
 }
 
-#c1_l span,#c1_r span{ 
+#c1_l span,#c1_r span{
     background: #22a063;
 }
 
