@@ -69,25 +69,30 @@ orange="#CB6015"
 		<%@dataset.each{|el|%>
 
 			<%
-    if !el['sev1'] then
-      hasdata=false
-      el['sev1']=0
-      el['sev2']=0
-      el['sev3']=0
-      el['sev4']=0
-      el['sev1res']=0
-       el['sev2res']=0
-       el['sev3res']=0
-       el['sev4res']=0
-      el['hi_jiracurve']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-      el['low_jiracurve']=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+   # if !el['sev1'] then
+      el['sprint_name']="Sprint #{Random.rand(1...6)}"
+       el['days_remaining']=Random.rand(1...10)
+      el['sev1']=Random.rand(1...20)
+      el['sev2']=Random.rand(1...20)
+      el['sev3']=Random.rand(1...20)
+      el['sev4']=Random.rand(1...20)
+        el['buildstatus']="ok"
+            el['teststatus']="ok"
+       el['minors']=el['sev3']+el['sev4']
+        el['majors']=el['sev1']+el['sev2']
+      el['sev1res']=Random.rand(0...5)
+       el['sev2res']=Random.rand(0...5)
+       el['sev3res']=Random.rand(0..5)
+       el['sev4res']=Random.rand(0...5)
+      el['hi_jiracurve']=[Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10)]
+      el['low_jiracurve']=[Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10)]
       el['jiracurve_guide']=[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
       el['project_days']=[1437364800000,1437451200000,1437537600000,1437624000000,1437624000000,1437796800000,1437883200000,1437969600000,1438056000000,1438142400000]
-      el['s1oldest']=1
-      el['s2oldest']=2
-      el['s3oldest']=3
-      el['s4oldest']=4
-    end
+      el['s1oldest']=Random.rand(1...50)
+      el['s2oldest']=Random.rand(1...50)
+      el['s3oldest']=Random.rand(1...50)
+      el['s4oldest']=Random.rand(1...50)
+   # end
 
 			if el['sev1']>0 || el['sev2']>0 || (el['sev3']+el['sev2'])>10  then
 				ocolor="#d8d8d8"
@@ -175,10 +180,11 @@ orange="#CB6015"
 </script>
 
 <div id="timerbox">
- <span id="timer">60</span><a href='/log'>.</a>
+ <!--<span id="timer">60</span><a href='/log'>.</a>-->
  </div>
 
-<div id="top"><a href='/config'>config</a></div>
+<div id="top"><h2>Test Dashboard</h2>
+  <a href='/config'>config</a></div>
 <!--<div id="banner">-->
 <!--<div id="il"><a href='/'><img src="/images/Logo.gif"></a></div><p></p>-->
 <!--</div>-->
@@ -195,11 +201,11 @@ orange="#CB6015"
          <div class="col-sm-12 col-md-6 col-lg-4">
 				      <span style="font-size:20px;color:#E6E6E6;"><%=el['projname']%></span>
          </div>
+  </div><!--row-->
+    <div class=row>
+      <div class="col-sm-12 col-md-6 col-lg-4" >
 
-
-
-
-				<span style="line-height:16px;font-size:16px;float:right;color:#E6E6E6;margin-right:30px;">
+				<span style="line-height:16px;font-size:16px;color:#E6E6E6;margin-right:0px;">
             Build <a href="<%=el['teamcitybuildurl']%>">
             <span class="glyphicon glyphicon-record" aria-hidden="true"
             style="color:
@@ -221,11 +227,12 @@ orange="#CB6015"
             "></span>
             </a>
 				</span>
+       </div>
+      </div>
 
-			</div><!--row-->
 
 			<div class=row>
-       <div class="col-sm-12 col-md-6 col-lg-4">
+       <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
 					<div class="panel panel-default panel-primary dashpanel">
 					<div class="panel-heading dashpanel-heading">
@@ -249,7 +256,7 @@ orange="#CB6015"
 
 
 
-				<div class="col-sm-12 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 					<div class="panel panel-defaul panel-primary dashpanel">
 						<div class="panel-heading dashpanel-heading">
 
@@ -286,7 +293,7 @@ orange="#CB6015"
 				</div><!--col-->
 
 
-				<div class="col-sm-12 col-md-6 col-lg-4">
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
           <div class="panel panel-default panel-primary dashpanel">
                   <div class="panel-heading dashpanel-heading">
@@ -524,7 +531,7 @@ orange="#CB6015"
 
 	    <div class=row>
           <div class="col-sm-12 col-md-6 col-lg-4">
-               <pre id="data" class="logger">Loading...</pre>
+            <!--   <pre id="data" class="logger">Loading...</pre>-->
           </div>
         </div>
 	</div><!--container-->
