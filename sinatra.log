@@ -1,0 +1,160 @@
+[2015-11-10 23:19:40] INFO  WEBrick 1.3.1
+[2015-11-10 23:19:40] INFO  ruby 2.1.7 (2015-08-18) [x64-mingw32]
+== Sinatra (v1.4.6) has taken the stage on 8080 for production with backup from WEBrick
+[2015-11-10 23:19:40] INFO  WEBrick::HTTPServer#start: pid=5736 port=8080
+WARN: tilt autoloading 'tilt/erb' in a non thread-safe way; explicit require 'tilt/erb' suggested.
+2015-11-10 23:19:50 - Errno::ENOENT - No such file or directory @ rb_sysopen - C:/dashboards/dashboard/views/lines.erb:
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:210:in `initialize'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:210:in `open'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:210:in `read_template_file'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:76:in `block in initialize'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:77:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt/template.rb:77:in `initialize'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:861:in `new'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:861:in `block in compile_template'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/tilt-2.0.1/lib/tilt.rb:88:in `fetch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:840:in `compile_template'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:821:in `render'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:666:in `erb'
+	Sinatra.rb:57:in `block in <main>'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `block in compile!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `[]'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (3 levels) in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:993:in `route_eval'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (2 levels) in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1014:in `block in process_route'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `process_route'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:972:in `block in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `each'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1084:in `block in dispatch!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1081:in `dispatch!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `block in call!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `call!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:894:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:218:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:211:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:181:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:2021:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `block in call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1795:in `synchronize'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+127.0.0.1 - - [10/Nov/2015:23:19:50 +0000] "GET /perf HTTP/1.1" 500 30 0.0640
+netbook - - [10/Nov/2015:23:19:50 GMT Standard Time] "GET /perf HTTP/1.1" 500 30
+- -> /perf
+127.0.0.1 - - [10/Nov/2015:23:19:50 +0000] "GET /favicon.ico HTTP/1.1" 404 473 0.0040
+netbook - - [10/Nov/2015:23:19:50 GMT Standard Time] "GET /favicon.ico HTTP/1.1" 404 473
+http://localhost:8080/perf -> /favicon.ico
+D, [2015-11-10T23:20:00.244523 #5736] DEBUG -- : MONGODB | Adding 127.0.0.1:27017 to the cluster.
+D, [2015-11-10T23:20:01.255875 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:02.264197 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:03.277377 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:04.284745 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:05.289064 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:06.297386 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:07.301705 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:08.306026 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:09.312353 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:10.316671 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:11.328311 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:12.336629 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:13.341945 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:14.350157 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:15.354001 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:16.360179 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:17.364684 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:18.370348 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:19.379134 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:20.387504 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:21.392246 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:22.395589 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:23.403572 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:24.407877 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:25.412193 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:26.417575 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:27.432486 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:28.438870 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:29.445301 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:30.449344 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:31.459320 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+2015-11-10 23:20:31 - Mongo::Error::NoServerAvailable - No server is available matching preference: #<Mongo::ServerSelector::Primary:0x0000000383a948 @options={"database"=>"testdata"}, @tag_sets=[], @server_selection_timeout=30>:
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/mongo-2.1.2/lib/mongo/server_selector/selectable.rb:90:in `select_server'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/mongo-2.1.2/lib/mongo/collection/view/iterable.rb:40:in `block in each'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/mongo-2.1.2/lib/mongo/retryable.rb:46:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/mongo-2.1.2/lib/mongo/retryable.rb:46:in `read_with_retry'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/mongo-2.1.2/lib/mongo/collection/view/iterable.rb:39:in `each'
+	Sinatra.rb:26:in `to_a'
+	Sinatra.rb:26:in `hashme'
+	Sinatra.rb:39:in `block in <main>'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1610:in `block in compile!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `[]'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (3 levels) in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:993:in `route_eval'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:974:in `block (2 levels) in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1014:in `block in process_route'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1012:in `process_route'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:972:in `block in route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `each'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:971:in `route!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1084:in `block in dispatch!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1081:in `dispatch!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `block in call!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `block in invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `catch'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `call!'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:894:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:218:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:211:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:181:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:2021:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `block in call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1795:in `synchronize'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1486:in `call'
+	C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/rack-1.6.4/lib/rack/handler/webrick.rb:88:in `service'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+	C:/Ruby21-x64/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+127.0.0.1 - - [10/Nov/2015:23:20:31 +0000] "GET / HTTP/1.1" 500 30 31.2188
+netbook - - [10/Nov/2015:23:20:00 GMT Standard Time] "GET / HTTP/1.1" 500 30
+- -> /
+D, [2015-11-10T23:20:34.440156 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+D, [2015-11-10T23:20:45.462982 #5736] DEBUG -- : MONGODB | No connection could be made because the target machine actively refused it. - connect(2) for 127.0.0.1:27017
+== Sinatra has ended his set (crowd applauds)
+[2015-11-10 23:20:52] INFO  going to shutdown ...
+[2015-11-10 23:20:52] INFO  WEBrick::HTTPServer#start done.

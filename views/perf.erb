@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link type="text/css" href="/views/layout.css" rel="stylesheet" />
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/circle/css/progress.css" rel="stylesheet">
+
+<link href="/logtail/logtail.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+/*var redirectURL = "";*/
+
+/*window.onload = function() { setInterval(countdown, 1000); }
+function countdown() {
+	var num = parseInt(document.getElementById('timer').innerHTML);
+	if(--num < 1) window.location = redirectURL;
+	else document.getElementById('timer').innerHTML = num;
+}*/
+//]]>
+</script>
+<%
+tidytabs="\n\t\t\t\t\t\t\t\t"
+gaugeparams="min: 0,max: 100,"+
+tidytabs+"gaugeWidthScale: 1.3,"+
+tidytabs+"showMinMax : false,"+
+tidytabs+"refreshAnimationType: 'bounce',"+
+tidytabs+"startAnimationType: 'bounce',"+
+tidytabs+"startAnimationTime: 3000,"+
+tidytabs+"showInnerShadow: true,"+
+tidytabs+"shadowOpacity : 0.5,"+
+tidytabs+"shadowSize: 0.3,"+
+tidytabs+"shadowVerticalOffset : 3,"+
+tidytabs+"valueFontColor: '#525659',"+
+tidytabs+"titleFontColor: '#525659'"
+
+light="#00843D"
+orange="#CB6015"
+ lightorange="#F2AE4C"
+ purple="#A05EB5"
+ lightpurple="#C69ED3"
+ blue="#008CE6"
+ lightblue="#99D1F5"
+ grey="#808080"
+ blue="#002D72"
+ lightblue="#008CE6"
+%>
+
+
+<!--[if lte IE 8]><script type="text/javascript" src="/flot/excanvas.js"></script><![endif]-->
+
+<script type="text/javascript" language="javascript" src="/js/jquery-1.11.2.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" language="javascript" src="/flot/jquery.flot.time.min.js"></script>
+<script type="text/javascript" language="javascript" src="/circle/src/jquery-asPieProgress.js"></script>
+<script type="text/javascript" src="/logtail/logtail.js"></script>
+</head>
+<body>
+
+<script>
+
+	$(document).ready(function () {
+		
+
+			<%
+   
+      sprint_name="Sprint #{Random.rand(1...6)}"
+      
+      hi_jiracurve=[Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10)]
+      low_jiracurve=[Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10),Random.rand(1...10)]
+      jiracurve_guide=[10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
+      project_days=[1437364800000,1437451200000,1437537600000,1437624000000,1437624000000,1437796800000,1437883200000,1437969600000,1438056000000,1438142400000]
+     
+
+	%>		<%rcolor=lightblue
+			ocolor="#008CE6"%>
+
+
+			hi_jiracurve1 = [<%count=-1%><%hi_jiracurve.each {|st|%><%count=count+1;%>[<%=project_days[count]%>, <%=st%>],<%}%>];
+			low_jiracurve1 = [<%count=-1%><%low_jiracurve.each{|st|%><%count=count+1;%>[<%=project_days[count]%>, <%=st%>],<%}%>];
+			jiracurve_guide1 = [<%count=-1%><%jiracurve_guide.each{|st|%><%count=count+1;%>[<%=project_days[count]%>, <%=st%>],<%}%>];
+
+
+
+			$.plot($("#curve_div1"),[
+				{data: hi_jiracurve1,lines: {fill:false, points: { show: true } ,show: true, colors:["<%="#FF0000"%>",]}},
+				{data: low_jiracurve1,lines: {fill:false, points: { show: true } ,show: true, colors:["<%="#008CE6"%>",]}},
+				{data: jiracurve_guide1,lines: {fill:false, points: { show: true } ,show: true, colors:["<%="#ffffff"%>"]}},
+				],{
+				grid: {borderWidth: 0,borderColor: "#E6E6E6",color: "#E6E6E6"},
+				yaxis: { minTickSize: 1,font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"},min: 0},
+				xaxis: {tickLength:0, autoscale:false,mode:"time",timeformat: "%d/%m", font:{size: 10,weight: "normal",family: "arial",color:"#ffffff"}},
+				legend: {show: false},
+				shadowSize:0,
+				colors:["#CA1F71","#1D3CCB","#1DCA78"]
+			});
+
+
+
+		
+	});
+</script>
+
+<div id="timerbox">
+ <!--<span id="timer">60</span><a href='/log'>.</a>-->
+ </div>
+
+<div id="top"><h2></h2>
+ 
+
+<div id="pagearea" >
+ <div class="container">
+
+
+			<div class=row>
+         <div class="col-sm-12 col-md-6 col-lg-4">
+				      <span style="font-size:20px;color:#E6E6E6;">aaa</span>
+         </div>
+  </div><!--row-->
+
+			<div class=row>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="panel panel-primary dashpanel_wide">
+						<div class="panel-heading dashpanel-heading">
+						<div class="panel-body">
+							<div class="chart_div_wide" id="curve_div1"></div>
+						</div>
+
+					</div>
+				</div><!--col-->
+
+			</div><!--row-->
+	
+
+	    <div class=row>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+          
+          </div>
+        </div>
+	</div><!--container-->
+</div><!--pagearea-->
