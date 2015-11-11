@@ -37,6 +37,18 @@ height:120px;
 font-family:arial;
 }
 
+
+#bar_div1{
+width:100%;
+height:300px;
+}
+
+
+.chart_div_wide{
+height:120px;
+font-family:arial;
+}
+
 .daily_chart_div{
 width:99%;
 height:250px;
@@ -76,6 +88,17 @@ font-family:Arial;
 
 .dashpanel{
 width:300px;
+height:190px;
+margin:4px;
+border:none!important;
+background-color:#1D1F24!important;
+opacity:0.9;
+ filter:alpha(opacity=90); /* For IE8 and earlier */
+}
+
+
+.dashpanel_wide{
+
 height:190px;
 margin:4px;
 border:none!important;

@@ -12,11 +12,11 @@ set :environment, :production
 set :protection, :except => :frame_options
 set :port, 8080
 set :bind, '0.0.0.0'
-$logger = Logger.new('sinatra.log','weekly')
-$logger.level = Logger::WARN
- $stdout.reopen("sinatra.log", "w")
-$stdout.sync = true
-$stderr.reopen($stdout)
+#$logger = Logger.new('sinatra.log','weekly')
+#$logger.level = Logger::WARN
+ #$stdout.reopen("sinatra.log", "w")
+#$stdout.sync = true
+#$stderr.reopen($stdout)
 
 #Thread.new do # trivial example work thread
 # system("run_schedule.rb")
@@ -54,7 +54,11 @@ end
 
 
 get '/perf' do
-erb :lines, :layout=>false
+erb :perf, :layout=>false
+end
+
+get '/progress' do
+erb :progress, :layout=>false
 end
 
 get '/config' do

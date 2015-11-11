@@ -232,9 +232,9 @@ JustGage = function(config) {
   this.txtTitle = this.canvas.text(this.params.titleX, this.params.titleY, this.config.title);
   this.txtTitle. attr({
     "font-size":this.params.titleFontSize,
-    "font-weight":"normal",
-    "font-family":"is",
-    "fill":this.config.titleFontColor,
+    "font-weight":"bold",
+    "font-family":"arial",
+    "fill":"white",
     "fill-opacity":"1"         
   });
   this.txtTitle.id = this.config.id+"-txttitle";
@@ -243,9 +243,9 @@ JustGage = function(config) {
   this.txtValue = this.canvas.text(this.params.valueX, this.params.valueY, this.originalValue+'%');
   this.txtValue. attr({
     "font-size":this.params.valueFontSize,
-    "font-weight":"normal",
-    "font-family":"is",
-    "fill":this.config.valueFontColor,
+    "font-weight":"bold",
+    "font-family":"arial",
+    "fill":"white",
     "fill-opacity":"0"          
   });
   this.txtValue.id = this.config.id+"-txtvalue";
@@ -255,7 +255,7 @@ JustGage = function(config) {
   this.txtLabel. attr({
     "font-size":this.params.labelFontSize,
     "font-weight":"normal",
-    "font-family":"is",
+    "font-family":"arial",
     "fill":this.config.labelFontColor,   
     "fill-opacity":"0"
   });
@@ -266,7 +266,7 @@ JustGage = function(config) {
   this.txtMin. attr({
     "font-size":this.params.minFontSize,
     "font-weight":"normal",
-    "font-family":"is",
+    "font-family":"arial",
     "fill":this.config.labelFontColor,   
     "fill-opacity": (this.config.showMinMax == true)? "1" : "0"
   });
@@ -277,7 +277,7 @@ JustGage = function(config) {
   this.txtMax. attr({
     "font-size":this.params.maxFontSize,
     "font-weight":"normal",
-    "font-family":"is",
+    "font-family":"arial",
     "fill":this.config.labelFontColor,   
     "fill-opacity": (this.config.showMinMax == true)? "1" : "0"
   });
